@@ -9,3 +9,4 @@ numpy==1.24.1
 pandas==2.2.2
 
 dash-table==5.0.0
+gunicorn
