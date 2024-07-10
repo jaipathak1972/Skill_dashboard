@@ -1,5 +1,5 @@
 import dash
-from dash import dcc, html, Dash
+from dash import dcc, html
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 import pandas as pd
@@ -9,7 +9,7 @@ from dash.dependencies import Input, Output
 load_figure_template('CYBORG')
 
 # Load the data
-data = pd.read_excel(r'C:\Users\Dell\OneDrive\Desktop\advance web scraping\Nakri_data_set\Skill_Gap_Analysis_Tool\notebooks\result.xlsx')
+data = pd.read_excel('result.xlsx')
 
 # Drop unnecessary columns
 data = data.drop(columns=['is_remote'])
@@ -55,8 +55,6 @@ def get_top_categories(column, n=5):
 top_job_roles = get_top_categories('Job_role')
 top_skill_categories = get_top_categories('Primary Skill Category')
 top_company_sizes = get_top_categories('Company Size')
-
-app = Dash(title='Skill Analysis', external_stylesheets=[dbc.themes.CYBORG])
 
 server = app.server
 
@@ -313,7 +311,7 @@ app.layout = dbc.Container([
     ),
     
     dcc.Graph(id='bar-plot')
-],fluid=True)
+], fluid=True)
 
 # Callback to update the bar plot based on the dropdown and slider values
 @app.callback(
@@ -364,4 +362,3 @@ def update_graphs(x_axis, y_axis, company_size, branches_status, top_n, selected
 # Run app
 if __name__ == '__main__':
     app.run_server(debug=True)
-
