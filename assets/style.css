@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 18%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    
+}/* Center container and set width for dropdown */
+.center-container {
+    width: 50%; /* Ensure the container takes full width */
+}
+
+.dropdown-width {
+    width: 50%; /* Desired width of the dropdown */
+}
