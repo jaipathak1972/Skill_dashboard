@@ -9,7 +9,7 @@ from dash.dependencies import Input, Output
 load_figure_template('CYBORG')
 
 # Load the data
-data = pd.read_excel(r'C:\Users\Dell\OneDrive\Desktop\advance web scraping\Nakri_data_set\Skill_Gap_Analysis_Tool\notebooks\result.xlsx')
+data = pd.read_excel('result.xlsx')
 
 # Drop unnecessary columns
 data = data.drop(columns=['is_remote'])
