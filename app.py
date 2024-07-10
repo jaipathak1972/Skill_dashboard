@@ -58,6 +58,8 @@ top_company_sizes = get_top_categories('Company Size')
 
 app = Dash(title='Skill Analysis', external_stylesheets=[dbc.themes.CYBORG])
 
+server = app.server
+
 # Layout
 app.layout = dbc.Container([
     html.Div([
