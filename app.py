@@ -9,7 +9,7 @@ from dash.dependencies import Input, Output
 load_figure_template('CYBORG')
 
 # Load the data
-data = pd.read_excel('result.xlsx')
+data = pd.read_excel(r'C:\Users\Dell\OneDrive\Desktop\advance web scraping\Nakri_data_set\Skill_Gap_Analysis_Tool\notebooks\result.xlsx')
 
 # Drop unnecessary columns
 data = data.drop(columns=['is_remote'])
@@ -27,7 +27,7 @@ min_value = data['job_pay'].min()
 max_value = data['job_pay'].max()
 
 # Initialize Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG],suppress_callback_exceptions=True)
 
 # Create plots
 count_plot = px.bar(data, x='Job_role', 
