@@ -77,73 +77,120 @@ app.layout = dbc.Container([
             'fontWeight': 'bold',
         }),
     ]),
-    ###################------------------------5 statistic card-----------------------------------
-    dbc.Row([
-        dbc.Col(html.Div([
-            html.H6("Total Job", style={'color': 'black'}),
-            html.H5(f"{total_job}", style={'color': 'black'})
-        ], style={
-            'textAlign': 'center',
-            'color': 'red',
-            'fontWeight': 'bold 4px',
-            'borderRadius': '10%',
-            'backgroundColor': 'white'
-        }), width=2),
-        dbc.Col(html.Div([
-            html.H6("Total unique companies", style={'color': 'black'}),
-            html.H5(f"{companies}", style={'color': 'black'})
-        ], style={
-            'textAlign': 'center',
-            'color': 'red',
-            'fontWeight': 'bold 4px',
-            'borderRadius': '10%',
-            'backgroundColor': 'white'
-        }), width=2),
-        dbc.Col(html.Div([
-            html.H6("Different locations", style={'color': 'black'}),
-            html.H5(f"{location}", style={'color': 'black'})
-        ], style={
-            'textAlign': 'center',
-            'color': 'red',
-            'fontWeight': 'bold 4px',
-            'borderRadius': '10%',
-            'backgroundColor': 'white'
-        }), width=2),
-        dbc.Col(html.Div([
-            html.H6("Min pay", style={'color': 'black'}),
-            html.H5(f"{min_value:.2f}", style={'color': 'black'})
-        ], style={
-            'textAlign': 'center',
-            'color': 'red',
-            'fontWeight': 'bold 4px',
-            'borderRadius': '10%',
-            'backgroundColor': 'white'
-        }), width=2),
-        dbc.Col(html.Div([
-            html.H6("Max Pay", style={'color': 'black'}),
-            html.H5(f"{max_value:.2f}", style={'color': 'black'})
-        ], style={
-            'textAlign': 'center',
-            'fontWeight': '2398923',
-            'borderRadius': '10%',
-            'backgroundColor': 'white'
-        }), width=2)
-    ], className='statistics'),
-    #############-----------------------3 pie graph---------------------------------##########################
-    dbc.Row([
-        dbc.Col(dcc.Graph(
-            figure=px.pie(top_job_roles, names='Job_role', title='Top Job Roles'),
-            style={'height': '300px', 'marginTop': '15px','marginBottom': '15px', 'width': '100%'}
-        ), width=4),
-        dbc.Col(dcc.Graph(
-            figure=px.pie(top_skill_categories, names='Primary Skill Category', title='Top Skill Categories'),
-            style={'height': '300px',  'marginTop': '15px','marginBottom': '15px','width': '100%'}
-        ), width=4),
-        dbc.Col(dcc.Graph(
-            figure=px.pie(top_company_sizes, names='Company Size', title='Top Company Sizes'),
-            style={'height': '300px', 'width': '100%', 'marginTop': '15px','marginBottom': '15px',}
-        ), width=4)
-    ]),
+dbc.Row([
+    # Statistic Cards
+    dbc.Col([
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.H6("Total Job", style={'color': 'black', 'fontSize': '12px'}),
+                html.H5(f"{total_job}", style={'color': 'black', 'fontSize': '14px'})
+            ], style={
+                'textAlign': 'center',
+                'color': 'red',
+                'fontWeight': 'bold',
+                'borderRadius': '2%',
+                'backgroundColor': 'white',
+                'padding': '4px',
+                'boxShadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+                'borderRadius': '10px',
+                'padding': '10px',
+                'marginLeft': '10px',
+                'marginTop': '10px'
+            }), width=12)
+        ]),
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.H6("Total unique companies", style={'color': 'black', 'fontSize': '12px'}),
+                html.H5(f"{companies}", style={'color': 'black', 'fontSize': '14px'})
+            ], style={
+                'textAlign': 'center',
+                'color': 'red',
+                'fontWeight': 'bold',
+                'borderRadius': '2%',
+                'backgroundColor': 'white',
+                'padding': '4px',
+                'boxShadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+                'borderRadius': '10px',
+                'padding': '10px',
+                'marginLeft': '10px',
+                'marginTop': '10px'
+            }), width=12)
+        ]),
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.H6("Different locations", style={'color': 'black', 'fontSize': '12px'}),
+                html.H5(f"{location}", style={'color': 'black', 'fontSize': '14px'})
+            ], style={
+                'textAlign': 'center',
+                'color': 'red',
+                'fontWeight': 'bold',
+                'borderRadius': '2%',
+                'backgroundColor': 'white',
+                'padding': '4px',
+                'boxShadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+                'borderRadius': '10px',
+                'padding': '10px',
+                'marginLeft': '10px',
+                'marginTop': '10px'
+            }), width=12)
+        ]),
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.H6("Min pay", style={'color': 'black', 'fontSize': '12px'}),
+                html.H5(f"{min_value:.2f}", style={'color': 'black', 'fontSize': '14px'})
+            ], style={
+                'textAlign': 'center',
+                'color': 'red',
+                'fontWeight': 'bold',
+                'borderRadius': '2%',
+                'backgroundColor': 'white',
+                'padding': '4px',
+                'boxShadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+                'borderRadius': '10px',
+                'padding': '10px',
+                'marginLeft': '10px',
+                'marginTop': '10px'
+            }), width=12)
+        ]),
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.H6("Max Pay", style={'color': 'black', 'fontSize': '12px'}),
+                html.H5(f"{max_value:.2f}", style={'color': 'black', 'fontSize': '14px'})
+            ], style={
+                'textAlign': 'center',
+                'color': 'red',
+                'fontWeight': 'bold',
+                'borderRadius': '2%',
+                'backgroundColor': 'white',
+                'padding': '4px',
+                'boxShadow': '0 4px 8px 0 rgba(1, 2, 3, 0.2)',
+                'borderRadius': '10px',
+                'padding': '10px',
+                'marginLeft': '10px',
+                'marginTop': '10px'
+            }), width=12)
+        ])
+    ], width=2),  # Adjust the width as necessary
+
+    # Pie Charts
+    dbc.Col([
+        dbc.Row([
+            dbc.Col(dcc.Graph(
+                figure=px.pie(top_job_roles, names='Job_role', title='Top Job Roles'),
+                style={'height': '300px', 'marginTop': '15px', 'marginBottom': '15px', 'width': '100%'}
+            ), width=4),
+            dbc.Col(dcc.Graph(
+                figure=px.pie(top_skill_categories, names='Primary Skill Category', title='Top Skill Categories'),
+                style={'height': '300px', 'marginTop': '15px', 'marginBottom': '15px', 'width': '100%'}
+            ), width=4),
+            dbc.Col(dcc.Graph(
+                figure=px.pie(top_company_sizes, names='Company Size', title='Top Company Sizes'),
+                style={'height': '300px', 'width': '100%', 'marginTop': '15px', 'marginBottom': '15px'}
+            ), width=4)
+        ])
+    ], width=10)  
+])
+,
     ################----------------------3 drop down for the stackbar------------------------------
     dbc.Row([
         dbc.Col([
